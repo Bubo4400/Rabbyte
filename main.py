@@ -6,7 +6,7 @@ import time
 
 model      = SentenceTransformer('all-MiniLM-L6-v2') 
 email      = input("Please enter your email: ") 
-wikipedia  = wikipediaapi.Wikipedia(user_agent=f"Obscura {email}", language='en', extract_format=wikipediaapi.ExtractFormat.HTML)
+wikipedia  = wikipediaapi.Wikipedia(user_agent=f"Rabbyte {email}", language='en', extract_format=wikipediaapi.ExtractFormat.HTML)
 print()
 
 startPage = wiki.getStartPage(wikipedia)
