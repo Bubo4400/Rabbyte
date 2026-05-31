@@ -3,6 +3,7 @@
 A semantic search tool that finds a path between two Wikipedia articles using sentence‑embedding similarity. Instead of traditional graph traversal, Rabbyte uses AI‑powered comparisons to choose the most promising next link at each step.
 
 ![Python Version](https://img.shields.io/badge/python-3.8%2B-blue) ![License](https://img.shields.io/badge/license-MIT-green) ![Sentence Transformers](https://img.shields.io/badge/SentenceTransformers-required-orange)
+![Wikipediaapi](https://img.shields.io/badge/wikipediaapi-required-orange)
 
 ## Features
 
@@ -22,7 +23,7 @@ A semantic search tool that finds a path between two Wikipedia articles using se
 
 ### Clone & Setup
 ```bash
-git clone https://github.com/Bubo4400/Rabbyte
+git clone https://github.com/Bubo4400/Rabbyte.git
 cd Rabbyte
 ```
 
