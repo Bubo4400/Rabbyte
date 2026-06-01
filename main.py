@@ -27,14 +27,13 @@ def search(page, before = None, timeLast = startTime, path = []):
 
         timeSpent = time.time()
         print(f"Rabbyte spent {round(timeSpent-timeLast, 2)}sec on the last site.")
-        print(f"Currently on page: {page.title} and this is page number {len(viewedPages)} that has been visited")
+        print(f"Currently on page: \033]8;;{page.fullurl}\033\\{page.title}\033]8;;\033\\ and this is page number {len(viewedPages)} that has been visited")
         viewedPages.add(page.title)
 
         links = wiki.getLinks(page)
         for link in links:
             for pg in viewedPages:
                 if pg == link.title:
-                    print(pg, link)
                     links.remove(pg)
                     break
 
@@ -47,7 +46,7 @@ def search(page, before = None, timeLast = startTime, path = []):
                 print("Going back a page")
                 return True, path
         if endTitle in links:
-            return False, path + [page.title]
+            return False, path + [page]
 
         winner = links[0]
         maxSim = compare.similarity(links[0], endTitle, model)
@@ -62,10 +61,10 @@ def search(page, before = None, timeLast = startTime, path = []):
     if repeat:
         print("Going back a page")
         return repeat, path
-    return repeat, path + [page.title]
+    return repeat, path + [page]
 
 _, path = search(startPage)
-path.remove(startPage.title)
+path.remove(startPage)
 path.reverse()
 
 if len(path) == 0:
@@ -74,7 +73,7 @@ else:
     print(f"\nSuccessfully found path in {len(viewedPages)} links by viewing {viewedPages} in {round(time.time()-startTime, 2)}sec")
 
     print(f"The path from {startPage.title} to {endTitle} is: ")
-    print(f"{startPage.title} -> ", end="")
+    print(f"\033]8;;{startPage.fullurl}\033\\{startPage.title}\033]8;;\033\\ -> ", end="")
     for pg in path:
-        print(f"{pg}\n{pg} -> ", end="")
-    print(f"{endTitle}")
+        print(f"\033]8;;{pg.fullurl}\033\\{pg.title}\033]8;;\033\\\n\033]8;;{pg.fullurl}\033\\{pg.title}\033]8;;\033\\ -> ", end="")
+    print(f"\033]8;;{endPage.fullurl}\033\\{endTitle}\033]8;;\033\\")
