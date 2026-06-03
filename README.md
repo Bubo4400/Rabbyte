@@ -1,4 +1,4 @@
-# Rabbyte – Wikipedia Pathfinder
+# Greedy Rabbyte – Wikipedia Pathfinder
 
 A semantic search tool that finds a path between two Wikipedia articles using sentence‑embedding similarity. Instead of traditional graph traversal, Rabbyte uses comparisons to choose the most promising next link at each step.
 
@@ -100,4 +100,4 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 ---
 
-**Rabbyte** – Navigate Wikipedia with semantic intelligence. 🐇
+**Greedy Rabbyte** – Navigate Wikipedia with semantic intelligence. 🐇
